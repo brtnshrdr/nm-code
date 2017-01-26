@@ -1,0 +1,24 @@
+{
+  "name": "ct",
+  "version": "1.0.0",
+  "description": "",
+  "main": "logger.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "js-yaml": "^3.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.7"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node useLogger"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}

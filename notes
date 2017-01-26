@@ -1,0 +1,11 @@
+logger.js
+    - Changed constructor name from `logger` to `Logger` to match standard practices
+    - Changed constructor to check if config is null/undefined, which allows `new logger()` (no config object) without throwing errors
+    - Changed constructor to check if format and transport are actually functions. If not, don't overwrite
+    - Changed `createLogObject()` a to take in level and data itself, removing the need for accessing this.(dot) properties
+        - Also check for null/undefined on the data object, if true, then convert data to an empty string
+        - Default level to LEVELS.INFO
+        - Personally I'd put this.data ALSO inside of `message: ` (or some other field like `data`) not just when typeof this.data === 'string' for easier use of this data inside custom `transport()` or `format()` functions. (You could then also get rid of Object.assign();)
+    - Changed the default `transport()` method to use a switch statement (as it's faster and more readable than if/if else/else statements) and changed the comparison to use the LEVELS Enum as well
+        Also used more appropriate console methods (e.g. console.info(), console.log(), console.warn(), console.error())
+    - Changed any comparisons to use strict equals checking (=== vs ==)
